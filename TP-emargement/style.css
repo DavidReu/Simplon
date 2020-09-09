@@ -1,0 +1,50 @@
+.tableau {
+    border: 1px solid black;
+    font-size: 10px;
+    text-align: center;
+    border-collapse: collapse;
+    padding: 2px;
+    font-family: sans-serif;
+}
+
+th,td {
+    border: 1px solid black;
+}
+
+th {
+    width: 300px;
+}
+
+span {
+    font-weight: bold;
+}
+
+.signature {
+    vertical-align: top;
+    height: 150px;
+}
+
+p{
+    line-height: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.top {
+    border-top-color: white;
+    border-left-color: white;
+}
+
+.bottom {
+    border-left-color: white;
+    border-bottom-color: white;
+}
+
+.cachet {
+    border: solid black 1px;
+    width: 350px;
+    height: 150px;
+    margin-top: 20px;
+    font-size: 10px;
+    margin-left: 790px;
+}
