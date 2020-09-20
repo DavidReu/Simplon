@@ -14,7 +14,7 @@ h1 {
     justify-content: space-around;
 }
 
-.user {
+#user {
     font-size: 30px;
     border: 1px dashed gold;
     width: 150px;
@@ -23,7 +23,7 @@ h1 {
     padding-top: 10px;
 }
 
-.ia {
+#ai {
     font-size: 30px;
     border: 1px dashed gold;
     width: 150px;
@@ -38,9 +38,8 @@ h1 {
     margin-top: 40px;
     display: flex;
     justify-content: space-around;
-    width: 1500px;
-    height: 100px;
-    border: 1px blue solid;
+    width: 1400px;
+    height: 40px;
 }
 
 .led_user {
@@ -48,18 +47,118 @@ h1 {
     justify-content: space-between;
     width: 150px;
     height: 20px;
+    margin-right: 7%;
 }
 
-.led_ia {
+.led_ai {
     display: flex;
     justify-content: space-between;
     width: 150px;
     height: 20px;
+    margin-left: 30%;
 }
 
-.lumiere {
-    background-color: white;
+
+.light {
+    background-color: goldenrod;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
+    border: 3px wheat solid;
+}
+
+.match {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 1400px;
+    height: 300px;
+    padding-top: 5px;
+}
+
+#userchoice {
+    width: 200px;
+    height: 200px;
+    border: 2px solid goldenrod;
+}
+
+#round {
+    width: 70px;
+    height: 70px;
+    border: 1px solid goldenrod;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    font-size: 55px;
+}
+
+#aichoice {
+    width: 200px;
+    height: 200px;
+    border: 2px solid goldenrod;
+}
+
+.choice {
+    width: 1400px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#rock {
+    width: 200px;
+    height: 200px;
+    border: 2px solid goldenrod;
+    background: no-repeat url(../r_p_s/images/rock.png) center;
+}
+
+#paper {
+    width: 200px;
+    height: 200px;
+    border: 2px solid goldenrod;
+    background: no-repeat url(../r_p_s/images/paper.png) center;
+}
+
+#scissors {
+    width: 200px;
+    height: 200px;
+    border: 2px solid goldenrod;
+    background: no-repeat url(../r_p_s/images/scissors.png) center;
+}
+
+#youwin {
+    width: 500px;
+    height: 300px;
+    border: 2px solid wheat;
+    background-color: gray;
+    position: absolute;
+    top: 25%;
+    left: 37%;
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+#btnreset {
+    width: 120px;
+    height: 50px;
+    position: absolute;
+    top: 70%;
+    left: 47%;
+    font-size: 20px;
+    border: 2px solid wheat;
+    background-color: gray;
+    font-family: fantasy;
+    color: goldenrod;
+    cursor: pointer;
+    visibility: hidden;
 }

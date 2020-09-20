@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -11,42 +11,46 @@
 <body>
     <h1>Rock Paper Scissors</h1>
 
-    <!--Pseudo + IA-->
+    <!--Pseudo + AI-->
     <div class="figthers">
-        <div class="user">Player</div>
-        <div class="ia">IA</div>
+        <div id="user">Player</div>
+        <div id="ai">AI</div>
     </div>
 
     <!--LED-->
     <div class="led">
         <div class="led_user">
-            <div id="led_user1"></div>
-            <div id="led_user2"></div>
-            <div id="led_user3"></div>
+            <div class="light" id="led_user1"></div>
+            <div class="light" id="led_user2"></div>
+            <div class="light" id="led_user3"></div>
         </div>
-        <div class="led_ia">
-            <div id="led_ia1"></div>
-            <div id="led_ia2"></div>
-            <div id="led_ia3"></div>
+        <div class="led_ai">
+            <div class="light" id="led_ai1"></div>
+            <div class="light" id="led_ai2"></div>
+            <div class="light" id="led_ai3"></div>
         </div>
     </div>
 
-    <!-- usersign + round + iasign-->
+    <!-- userchoice + round + aichoice-->
     <div class="match">
-        <div id="usersign"></div>
-        <div id="round"></div>
-        <div id="iasign"></div>
+        <div id="userchoice"></div>
+        <div id="round">1</div>
+        <div id="aichoice"></div>
     </div>
 
     <!--choice-->
     <div class="choice">
-        <div id="rock"></div>
-        <div id="paper"></div>
-        <div id="scissors"></div>
+        <div id="rock" onclick="rock()"></div>
+        <div id="paper" onclick="paper()"></div>
+        <div id="scissors" onclick="scissors()"></div>
     </div>
+
+    <!--Result-->
+    <div id="youwin"><span>You Win !!</span></div>
+    <input type="button" id="btnreset" value="Rejouer ?" onclick="reset()">
+    <footer>
+        <script type="text/javascript" src="app.js"></script>
+    </footer>
 </body>
-<footer>
-    <script type="text/javascript" src="app.js"></script>
-</footer>
 
 </html>
