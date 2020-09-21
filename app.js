@@ -9,11 +9,12 @@ let aiscore = 0;
 const result = document.getElementById("youwin");
 const btn = document.getElementById("btnreset");
 
-// Pseudo du joueur
+
+// Pseudo du joueur ------------------------------------------------------
 document.getElementById("user").innerText = prompt("What is your pseudo ?", "<Enter your pseudo here>");
 
-// led color : win, lose and equality
 
+// led color : win, lose and equality------------------------------------------------------
 //user
 function winleduser() {
     if (count == 0) {
@@ -51,7 +52,7 @@ function equalleduser() {
     }
 }
 
-//ai 
+//ai ------------------------------------------------------
 function winledai() {
     if (count == 0) {
         document.getElementById("led_ai1").style.backgroundColor = "green";
@@ -89,7 +90,7 @@ function equalledai() {
 }
 
 
-// Ai random choice
+// Ai random choice------------------------------------------------------
 function ai() {
     var number = Math.floor(Math.random() * 3);
     aisign = signs[number];
@@ -105,7 +106,7 @@ function ai() {
 }
 
 
-// user choice
+// user choice------------------------------------------------------
 function rock() {
     onclick = userchoice.style.background = "no-repeat url(../r_p_s/images/rock.png) center";
     onclick = ai();
@@ -127,7 +128,7 @@ function scissors() {
     match();
 }
 
-// match ; compare usersign and aisign
+// match ; compare usersign and aisign ------------------------------------------------------
 function match() {
     document.getElementById("round").innerText = count + 1;
     if ((usign == 'rock' && aisign == 'scissors') || (usign == 'paper' && aisign == 'rock') || (usign == 'scissors' && aisign == 'paper')) {
@@ -158,23 +159,33 @@ function match() {
         console.log("user " + uscore);
         console.log("ai " + aiscore);
     }
+    score();
+}
+
+// score final ------------------------------------------------------
+function score() {
     count = count + 1;
     if (uscore > aiscore && count == 3) {
         result.style.visibility = 'visible';
         btn.style.visibility = 'visible';
+        document.getElementById("paper").style.visibility = 'hidden'
     }
     else if (uscore < aiscore && count == 3) {
         result.style.visibility = 'visible';
         result.innerText = "You lose !!"
         btn.style.visibility = 'visible';
+        document.getElementById("paper").style.visibility = 'hidden'
     }
     else if (uscore = aiscore && count == 3) {
         result.style.visibility = 'visible';
         result.innerText = "Equality !!";
         btn.style.visibility = 'visible';
+        document.getElementById("paper").style.visibility = 'hidden'
     }
 }
 
+
+// reset score and choice ------------------------------------------------------
 function reset() {
     document.getElementById("round").innerText = "1";
     userchoice.style.background = "none";
@@ -186,9 +197,12 @@ function reset() {
     count = 0;
     result.style.visibility = 'hidden';
     btn.style.visibility = 'hidden';
+    document.getElementById("paper").style.visibility = 'visible';
     resetled();
 }
 
+
+// reset led ------------------------------------------------------
 function resetled() {
     document.getElementById("led_user1").style.backgroundColor = "goldenrod";
     document.getElementById("led_user2").style.backgroundColor = "goldenrod";
