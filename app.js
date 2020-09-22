@@ -10,6 +10,7 @@ const result = document.getElementById("youwin");
 const btn = document.getElementById("btnreset");
 let winstreak = 0;
 let winmax = 0;
+let cumulate = 0;
 
 
 // Pseudo du joueur ------------------------------------------------------
@@ -168,6 +169,8 @@ function score() {
         document.getElementById("paper").style.visibility = 'hidden';
         document.getElementById("rock").style.visibility = 'hidden';
         document.getElementById("scissors").style.visibility = 'hidden';
+        record();
+        streak();
     }
     else if ((uscore == aiscore) && count == 3) {
         result.style.visibility = 'visible';
@@ -176,6 +179,7 @@ function score() {
         document.getElementById("paper").style.visibility = 'hidden';
         document.getElementById("rock").style.visibility = 'hidden';
         document.getElementById("scissors").style.visibility = 'hidden';
+        streak();
     }
 
     else if ((uscore < aiscore) && count == 3) {
@@ -185,6 +189,7 @@ function score() {
         document.getElementById("paper").style.visibility = 'hidden';
         document.getElementById("rock").style.visibility = 'hidden';
         document.getElementById("scissors").style.visibility = 'hidden';
+        losestreak();
     }
 }
 
@@ -216,4 +221,25 @@ function resetled() {
     document.getElementById("led_ai1").style.backgroundColor = "goldenrod";
     document.getElementById("led_ai2").style.backgroundColor = "goldenrod";
     document.getElementById("led_ai3").style.backgroundColor = "goldenrod";
+}
+
+// win stats ----------------------------------------------------------
+
+function record() {
+    winmax = winmax + 1;
+    document.getElementById("totalwin").innerText = 'Record : ' + winmax;
+}
+
+function streak() {
+    cumulate = cumulate + 1;
+    if (cumulate >= 2) {
+        winstreak = winstreak + 1;
+    }
+    document.getElementById("winstreak").innerText = 'Winstreak  : ' + winstreak;
+}
+
+function losestreak() {
+    cumulate = 0;
+    winstreak = 0;
+    document.getElementById("winstreak").innerText = 'Winstreak  : ' + winstreak;
 }
