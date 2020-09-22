@@ -4,10 +4,12 @@ const aichoice = document.getElementById("aichoice");
 const signs = ['rock', 'paper', 'scissors'];
 let usign = " ";
 let aisign = " ";
-let uscore = 0;
 let aiscore = 0;
+let uscore = 0;
 const result = document.getElementById("youwin");
 const btn = document.getElementById("btnreset");
+let winstreak = 0;
+let winmax = 0;
 
 
 // Pseudo du joueur ------------------------------------------------------
@@ -137,8 +139,6 @@ function match() {
         aichoice.style.borderColor = 'red';
         winleduser();
         loseledai();
-        console.log("user " + uscore);
-        console.log("ai " + aiscore);
     }
     else if ((usign == 'scissors' && aisign == 'rock') || (usign == 'rock' && aisign == 'paper') || (usign == 'paper' && aisign == 'scissors')) {
         aiscore = aiscore + 1;
@@ -146,8 +146,6 @@ function match() {
         aichoice.style.borderColor = 'green';
         loseleduser();
         winledai();
-        console.log("user " + uscore);
-        console.log("ai " + aiscore);
     }
     else {
         userchoice.style.borderColor = 'blue';
@@ -156,8 +154,6 @@ function match() {
         uscore = uscore + 1;
         equalledai();
         equalleduser();
-        console.log("user " + uscore);
-        console.log("ai " + aiscore);
     }
     score();
 }
@@ -165,22 +161,30 @@ function match() {
 // score final ------------------------------------------------------
 function score() {
     count = count + 1;
-    if (uscore > aiscore && count == 3) {
+    if ((uscore > aiscore) && count == 3) {
         result.style.visibility = 'visible';
+        result.innerText = "You Win !!";
         btn.style.visibility = 'visible';
-        document.getElementById("paper").style.visibility = 'hidden'
+        document.getElementById("paper").style.visibility = 'hidden';
+        document.getElementById("rock").style.visibility = 'hidden';
+        document.getElementById("scissors").style.visibility = 'hidden';
     }
-    else if (uscore < aiscore && count == 3) {
-        result.style.visibility = 'visible';
-        result.innerText = "You lose !!"
-        btn.style.visibility = 'visible';
-        document.getElementById("paper").style.visibility = 'hidden'
-    }
-    else if (uscore = aiscore && count == 3) {
+    else if ((uscore == aiscore) && count == 3) {
         result.style.visibility = 'visible';
         result.innerText = "Equality !!";
         btn.style.visibility = 'visible';
-        document.getElementById("paper").style.visibility = 'hidden'
+        document.getElementById("paper").style.visibility = 'hidden';
+        document.getElementById("rock").style.visibility = 'hidden';
+        document.getElementById("scissors").style.visibility = 'hidden';
+    }
+
+    else if ((uscore < aiscore) && count == 3) {
+        result.style.visibility = 'visible';
+        result.innerText = "You lose !!";
+        btn.style.visibility = 'visible';
+        document.getElementById("paper").style.visibility = 'hidden';
+        document.getElementById("rock").style.visibility = 'hidden';
+        document.getElementById("scissors").style.visibility = 'hidden';
     }
 }
 
@@ -198,6 +202,8 @@ function reset() {
     result.style.visibility = 'hidden';
     btn.style.visibility = 'hidden';
     document.getElementById("paper").style.visibility = 'visible';
+    document.getElementById("rock").style.visibility = 'visible';
+    document.getElementById("scissors").style.visibility = 'visible';
     resetled();
 }
 
