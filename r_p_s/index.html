@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Rock Paper Scissors</h1>
+
+    <!--Pseudo + AI-->
+    <div class="figthers">
+        <div id="user">Player</div>
+        <div id="ai">AI</div>
+    </div>
+
+    <!--LED-->
+    <div class="led">
+        <div class="led_user">
+            <div class="light" id="led_user1"></div>
+            <div class="light" id="led_user2"></div>
+            <div class="light" id="led_user3"></div>
+        </div>
+        <div class="led_ai">
+            <div class="light" id="led_ai1"></div>
+            <div class="light" id="led_ai2"></div>
+            <div class="light" id="led_ai3"></div>
+        </div>
+    </div>
+
+    <!-- userchoice + round + aichoice-->
+    <div class="match">
+        <div id="userchoice"></div>
+        <div id="round">1</div>
+        <div id="aichoice"></div>
+    </div>
+
+    <!--choice-->
+    <div class="choice">
+        <div id="rock" onclick="rock()"></div>
+        <div id="paper" onclick="paper()"></div>
+        <div id="scissors" onclick="scissors()"></div>
+    </div>
+
+    <!--Result-->
+    <div id="youwin"><span>You Win !!</span></div>
+    <input type="button" id="btnreset" value="Rejouer ?" onclick="reset()">
+    <footer>
+        <script type="text/javascript" src="app.js"></script>
+    </footer>
+</body>
+
+</html>
