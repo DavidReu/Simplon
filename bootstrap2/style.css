@@ -1,0 +1,59 @@
+body {
+    padding-top: 50px;
+}
+
+nav {
+    font-size: 12px;
+}
+
+.startboot {
+    font-size: 12px;
+    color: gray;
+}
+
+header {
+    height: 44rem;
+}
+
+h1 {
+    padding-top: 16rem;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+span {
+    font-size: 18px;
+}
+
+hr {
+    width: 300px;
+    border-top: 2px solid white;
+}
+
+.bouton {
+    width: 100px;
+}
+
+.graybar {
+    width: 150px;
+    border-top: 2px solid #d1cdcd;
+    margin-left: 0;
+}
+
+p {
+    font-size: 12px;
+}
+
+.deco {
+    list-style-type: none;
+}
+
+.imgbottom {
+    height: 10rem;
+}
+
+footer {
+    font-size: 10px;
+}
